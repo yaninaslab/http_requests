@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Requests</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+   
+    <div class="form">
+    <input type="text" id="title_input" placeholder="Title">
+    <textarea name="" id="user_post_input" cols="30" rows="10"></textarea>
+    <input type="submit" id="make_post" value="Make Post">
+    <input type="submit" id="update_post" value="Update Post">
+    <input type="submit" id="delete_post" value="Delete Post">
+    <input type="submit" id="get_posts" value="Get Posts">
+    <section id="post_container">
+    </section>
+<h3 id="post_sent"></h3>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
