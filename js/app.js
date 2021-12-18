@@ -1,24 +1,25 @@
 
 function post_success(response) {
+
     var post_sent = document.getElementById('post_sent');
-    post_sent.innerText = "Your post has been successfully sent!"
+    // post_sent.innerText = "Your post with title" + response.data.title +  " has been successfully sent!"
+    post_sent.innerText = `Your post with title ${response.data.title} has been successfully sent!`;
 }
 
 function post_failure(error) {
     var post_sent = document.getElementById('post_sent');
-    post_sent.innerText = "Something went wrong, please try again!"
+    post_sent.innerText = error.message;
 }
 
 function make_post() {
-
-axios.request({
-    url: "https://jsonplaceholder.typicode.com/posts",
-    method: "POST",
-    data: {
-        title: title_input.value,
-        body: user_post_input.value,
-    }
-}).then(post_success).catch(post_failure);
+    axios.request({
+        url: "https://jsonplaceholder.typicode.com/posts",
+        method: "POST",
+        data: {
+            title: title_input.value,
+            body: user_post_input.value,
+        }
+    }).then(post_success).catch(post_failure);
 }
 document.getElementById('make_post').addEventListener('click', make_post);
 
@@ -45,7 +46,7 @@ function update_post() {
             body: user_post_input.value,
         }
     }).then(update_success).catch(update_failure);
-    }
+}
     document.getElementById('update_post').addEventListener('click', update_post);
 
 
